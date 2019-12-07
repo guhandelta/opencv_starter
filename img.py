@@ -5,8 +5,11 @@ rs = cv2.resize(img,(int(img.shape[0]/2),int(img.shape[1]/2))) # img.shap[0] => 
 rs1 = cv2.resize(img,(int(img.shape[0]/0.5),int(img.shape[1]/3)))
 print(img)
 print(type(img))
+edges = cv2.Canny(img,100,200)
 cv2.imwrite("resize.jpg",rs)
 cv2.imwrite("resize1.jpg",rs1)
 cv2.imshow("show",img)
-cv2.waitKey(5000)
-cv2.destroyAllWindows()
+cv2.imshow("Edges Detected",edges)
+
+cv2.waitKey(5000) # waits until a key is pressed
+cv2.destroyAllWindows() # destroys the window showing image
